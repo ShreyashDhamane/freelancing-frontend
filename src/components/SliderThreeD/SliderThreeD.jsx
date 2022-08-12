@@ -2,9 +2,6 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react/swiper-react";
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
-import "swiper/modules/effect-fade/effect-fade";
-import "swiper/modules/navigation/navigation";
-import "swiper/modules/pagination/pagination";
 import "./SliderThreeD.scss";
 
 import { EffectCoverflow, Autoplay } from "swiper";
