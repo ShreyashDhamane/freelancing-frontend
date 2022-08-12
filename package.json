@@ -24,7 +24,6 @@
     "font-awesome": "^4.7.0",
     "framer-motion": "^4.1.17",
     "multiselect-react-dropdown": "^2.0.21",
-    "node-sass": "4.14",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-dropdown-select": "^4.8.4",
