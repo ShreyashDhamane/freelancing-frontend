@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+// import "swiper/css";
+// import "swiper/css/pagination";
+// import "swiper/css/navigation";
 
 import "./NormalSlider.scss";
 import { useNavigate } from "react-router-dom";
@@ -18,7 +18,7 @@ const NormalSlider = (props) => {
   const [items, setItems] = useState();
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/${props.type}`).then(function (response) {
+    axios.get(`http://localhost:8080/${props.type}`).then(function(response) {
       setItems(response.data.items);
       setLoading(false);
     });

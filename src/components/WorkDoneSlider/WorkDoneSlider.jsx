@@ -3,9 +3,9 @@ import "./WorkDoneSlider.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { motion } from "framer-motion";
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+// import "swiper/css";
+// import "swiper/css/pagination";
+// import "swiper/css/navigation";
 import { Navigation } from "swiper";
 import { LimitCharHoverReveal } from "../import";
 
@@ -37,7 +37,9 @@ const WorkDoneSlider = (props) => {
                   transition={{ duration: 1, ease: "linear" }}
                   className="work-done-slider-card"
                 >
-                  <div className="card-title"><LimitCharHoverReveal word={work.title} limit="15"/></div>
+                  <div className="card-title">
+                    <LimitCharHoverReveal word={work.title} limit="15" />
+                  </div>
                   <div className="card-desc">{work.desc}</div>
                   <div
                     className={`card-status ${
