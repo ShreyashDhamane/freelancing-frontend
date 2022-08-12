@@ -1,11 +1,13 @@
 import React from "react";
 import "./WorkDoneSlider.scss";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react/swiper-react";
 import { motion } from "framer-motion";
 // Import Swiper styles
-import "swiper/swiper.scss"; // core Swiper
-import "swiper/modules/navigation/navigation.scss"; // Navigation module
-import "swiper/modules/pagination/pagination.scss"; // Pagination module
+import "swiper/swiper-bundle.min.css";
+import "swiper/swiper.min.css";
+import "swiper/modules/effect-fade/effect-fade";
+import "swiper/modules/navigation/navigation";
+import "swiper/modules/pagination/pagination";
 import { Navigation } from "swiper";
 import { LimitCharHoverReveal } from "../import";
 

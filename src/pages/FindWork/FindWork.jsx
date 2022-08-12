@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./FindWork.scss";
-import { Footer, FullDivLoader, FullScreenLoader, Navbar } from "../../components/import";
+import {
+  Footer,
+  FullDivLoader,
+  FullScreenLoader,
+  Navbar,
+} from "../../components/import";
 import { useNavigate } from "react-router-dom";
-import { SwiperSlide } from "swiper/react";
 import { toast } from "react-toastify";
 import axios from "axios";
 import LoadingSpinner from "./LoadingSpinner";
@@ -16,7 +20,7 @@ const FindWork = (props) => {
   const [items, setItems] = useState();
 
   useEffect(() => {
-    axios.get(`${server_url}/${props.type}`).then(function (response) {
+    axios.get(`${server_url}/${props.type}`).then(function(response) {
       setItems(response.data.items);
       setLoading(false);
     });
