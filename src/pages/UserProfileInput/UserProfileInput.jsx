@@ -1,3 +1,4 @@
+import React from "react";
 import LinearStepper from "./LinearStepper";
 import { CssBaseline, Container, Paper, Box } from "@material-ui/core";
 import { Navbar } from "../../components/import";
