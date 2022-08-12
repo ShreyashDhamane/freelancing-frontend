@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./FeedBack.scss";
 import { FaStar } from "react-icons/fa";
 import { toast } from "react-toastify";
@@ -90,10 +90,11 @@ const FeedBack = () => {
             id="feedback"
             cols="50"
             rows="10"
-            placeholder={`Enter the feedback for the ${localStorage.getItem("username") === state.client
-              ? "freelancer"
-              : "client "
-              } here:`}
+            placeholder={`Enter the feedback for the ${
+              localStorage.getItem("username") === state.client
+                ? "freelancer"
+                : "client "
+            } here:`}
             value={feedbackDesc}
             onChange={updateFeedback}
           ></textarea>
