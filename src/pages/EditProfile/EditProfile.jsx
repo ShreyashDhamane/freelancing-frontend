@@ -47,7 +47,9 @@ const EditProfile = () => {
     }
     axios
       .get(
-        `http://localhost:8080/editprofile/${localStorage.getItem("username")}`
+        `https://git.heroku.com/freelancing-backend.git/editprofile/${localStorage.getItem(
+          "username"
+        )}`
       )
       .then((response) => {
         if (response.data.result.length > 0) {

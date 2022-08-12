@@ -21,43 +21,45 @@ const FindPartner = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/findpartner`).then(function (response) {
-      if (talents === undefined) {
-        setOriginalTalents(response.data.items);
-        const newTalents = [];
-        setCategory("designer");
-        for (let i = 0; i < response.data.items.length; i++) {
-          for (let k = 0; k < response.data.items[i].category.length; k++) {
+    axios
+      .get(`https://git.heroku.com/freelancing-backend.git/findpartner`)
+      .then(function (response) {
+        if (talents === undefined) {
+          setOriginalTalents(response.data.items);
+          const newTalents = [];
+          setCategory("designer");
+          for (let i = 0; i < response.data.items.length; i++) {
+            for (let k = 0; k < response.data.items[i].category.length; k++) {
+              if (
+                response.data.items[i].category[k]
+                  .replace(/\W/g, "")
+                  .toLowerCase() === "designer"
+              ) {
+                newTalents.push(response.data.items[i]);
+              }
+            }
+          }
+          console.log("newTalents");
+          console.log(newTalents);
+          settalents(newTalents);
+          setCategoryTalents(newTalents);
+          setFilterData(response.data.filterData);
+        }
+        if (skills === undefined) {
+          for (let i = 0; i < response.data.filterData.length; i++) {
+            //removing all non-alphanumeric characters.
             if (
-              response.data.items[i].category[k]
+              response.data.filterData[i].category
                 .replace(/\W/g, "")
                 .toLowerCase() === "designer"
             ) {
-              newTalents.push(response.data.items[i]);
+              setSkills(response.data.filterData[i].skills);
+              break;
             }
           }
         }
-        console.log("newTalents");
-        console.log(newTalents);
-        settalents(newTalents);
-        setCategoryTalents(newTalents);
-        setFilterData(response.data.filterData);
-      }
-      if (skills === undefined) {
-        for (let i = 0; i < response.data.filterData.length; i++) {
-          //removing all non-alphanumeric characters.
-          if (
-            response.data.filterData[i].category
-              .replace(/\W/g, "")
-              .toLowerCase() === "designer"
-          ) {
-            setSkills(response.data.filterData[i].skills);
-            break;
-          }
-        }
-      }
-      setLoading(false);
-    });
+        setLoading(false);
+      });
   }, []);
 
   if (isLoading) {

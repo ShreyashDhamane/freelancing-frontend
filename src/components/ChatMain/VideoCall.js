@@ -20,7 +20,7 @@ const VideoCall = () => {
     const container = document.getElementById("video-call-container-id");
     if (!scriptIdTemp) {
       axios
-        .get(`http://localhost:8080/video-call/${id}`)
+        .get(`https://git.heroku.com/freelancing-backend.git/video-call/${id}`)
         .then((res) => {
           if (res.status === 200) {
             const script = document.createElement("script");

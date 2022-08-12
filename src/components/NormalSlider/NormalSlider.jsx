@@ -17,10 +17,12 @@ const NormalSlider = (props) => {
   const [items, setItems] = useState();
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/${props.type}`).then(function(response) {
-      setItems(response.data.items);
-      setLoading(false);
-    });
+    axios
+      .get(`https://git.heroku.com/freelancing-backend.git/${props.type}`)
+      .then(function(response) {
+        setItems(response.data.items);
+        setLoading(false);
+      });
   }, []);
 
   if (isLoading) {

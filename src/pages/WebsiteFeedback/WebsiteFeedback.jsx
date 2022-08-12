@@ -72,7 +72,7 @@ const WebsiteFeedback = () => {
     }
 
     axios
-      .post("http://localhost:8080/websitefeedback", {
+      .post("https://git.heroku.com/freelancing-backend.git/websitefeedback", {
         data: {
           ...websiteFeedback,
           username: localStorage.getItem("username"),
@@ -112,11 +112,14 @@ const WebsiteFeedback = () => {
           !someData.votedUsers.includes(localStorage.getItem("username"))
         ) {
           voteNoted = true;
-          axios.post("http://localhost:8080/updatewebsitefeedbackvotes", {
-            title: data.title,
-            desc: data.desc,
-            username: localStorage.getItem("username"),
-          });
+          axios.post(
+            "https://git.heroku.com/freelancing-backend.git/updatewebsitefeedbackvotes",
+            {
+              title: data.title,
+              desc: data.desc,
+              username: localStorage.getItem("username"),
+            }
+          );
           return {
             ...someData,
             votes: someData.votes + 1,
