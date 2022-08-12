@@ -1,3 +1,4 @@
+import React from "react";
 import "./App.css";
 import {
   Bid,
@@ -44,7 +45,6 @@ import { setBidAccepted } from "./features/socket/bidAcceptedSlice";
 import { setFeedback } from "./features/socket/feedbackSlice";
 import EditCategoryAndSkills from "./components/EditCategoryAndSkills/EditCategoryAndSkills";
 
-
 function App() {
   if (
     !(
@@ -72,7 +72,7 @@ function App() {
           dispatch(addOnlineUser(user));
         }
       });
-      socket.on("error", function (err) {
+      socket.on("error", function(err) {
         console.log(err);
       });
       socket.on("userLeft", (username) => {
@@ -98,12 +98,12 @@ function App() {
         dispatch(setFeedback(data));
       });
     }
-    window.addEventListener("beforeunload", function (e) {
+    window.addEventListener("beforeunload", function(e) {
       e.preventDefault();
       e.returnValue = "";
     });
     return () => {
-      window.removeEventListener("beforeunload", function (e) { });
+      window.removeEventListener("beforeunload", function(e) {});
     };
   }, [socket]);
 
