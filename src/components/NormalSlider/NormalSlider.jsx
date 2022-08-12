@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+import "swiper/swiper.scss"; // core Swiper
+import "swiper/modules/navigation/navigation.scss"; // Navigation module
+import "swiper/modules/pagination/pagination.scss"; // Pagination module
 
 import "./NormalSlider.scss";
 import { useNavigate } from "react-router-dom";
