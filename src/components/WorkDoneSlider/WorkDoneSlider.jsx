@@ -1,6 +1,6 @@
 import React from "react";
 import "./WorkDoneSlider.scss";
-import { Swiper, SwiperSlide } from "swiper/react/swiper-react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { motion } from "framer-motion";
 // Import Swiper styles
 import "swiper/swiper-bundle.min.css";
